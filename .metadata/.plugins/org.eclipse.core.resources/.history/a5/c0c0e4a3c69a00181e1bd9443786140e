@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+<!-- <bean id="epp" class="com.abu.EmployeeBeanProcessor"></bean> -->
+
+
+<bean id="emp1" class="com.abu.Employee"  init-method="jaiBalaji" destroy-method="Goodbye">
+<property name="empId" value="6002"></property>
+<property name="empName" value="Abu Talha Siddiqi"></property>
+<property name="salary" value="23724"></property>
+<property name="proj" ref="p1"></property>
+</bean>
+
+<!-- <bean id="emp2" class="com.abu.Employee" autowire="byName" init-method="jaiBalaji" destroy-method="Goodbye"> -->
+<bean id="emp2" class="com.abu.Employee" init-method="jaiBalaji" destroy-method="Goodbye">
+<property name="empId" value="6002"></property>
+<property name="empName" value="Abu Talha Siddiqi"></property>
+<property name="salary" value="#{emp1.salary}"></property>
+<!-- <property name="proj" ref="p1"></property> -->
+<property name="proj" value="#{emp1.proj}"></property>
+</bean>
+
+
+
+<!-- <bean id="e1" class="com.abu.Employee" autowire="byName">
+<constructor-arg index="2" value="25000"></constructor-arg>
+<constructor-arg index="0" value="6001"></constructor-arg>
+<constructor-arg index="1" value="Murli"></constructor-arg>
+<property name="proj" ref="p1"></property>
+</bean>
+ -->
+<bean id="p1" class="com.abu.Project" >
+<property name="projId" value="314"></property>
+<property name="projName" value="L and K"></property>
+</bean>
+
+<bean id="proj" class="com.abu.Project">
+<property name="projId" value="314"></property>
+<property name="projName" value="L and K"></property>
+</bean>
+
+<!-- <bean id="emp3" class="com.abu.Employee" >
+<property name="empId" >
+<value>6002</value>
+</property>
+<property name="proj" >
+<ref bean="p1"></ref>
+</property>
+</bean> -->
+
+<bean id="emp4" class="com.abu.Employee" name="abb-talha-sid" >
+<constructor-arg index="2" >
+<value>1234</value>
+</constructor-arg>
+<constructor-arg index="0" value="6001"></constructor-arg>
+<constructor-arg index="1" value="Murli"></constructor-arg>
+
+</bean>
+</beans>

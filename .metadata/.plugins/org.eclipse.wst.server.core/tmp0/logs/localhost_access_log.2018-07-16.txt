@@ -1,0 +1,4 @@
+127.0.0.1 - - [16/Jul/2018:09:05:16 +0530] "GET / HTTP/1.1" 404 951
+127.0.0.1 - - [16/Jul/2018:09:05:17 +0530] "GET /SpringMVCDemo/WEB-INF/classes/com/abu/controller/CustomerController.java HTTP/1.1" 404 949
+127.0.0.1 - - [16/Jul/2018:09:05:33 +0530] "GET /SpringMVCDemo/customer HTTP/1.1" 200 644
+127.0.0.1 - - [16/Jul/2018:09:05:46 +0530] "POST /SpringMVCDemo/addcustomer HTTP/1.1" 200 244

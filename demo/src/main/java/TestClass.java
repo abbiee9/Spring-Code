@@ -1,0 +1,32 @@
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestClass 
+{
+
+	private String name;
+
+	public TestClass(String name) 
+	{
+		this.name = name;
+		//System.out.println(name);
+	}
+
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+
+	public void printName()
+	{
+		System.out.println(name);
+	}
+	
+	public static void main(String[] args) 
+	{
+		ApplicationContext bf = new ClassPathXmlApplicationContext("mapper.xml");
+		TestClass ts=	(TestClass) bf.getBean("testBean");
+		
+		ts.printName();
+	}
+}

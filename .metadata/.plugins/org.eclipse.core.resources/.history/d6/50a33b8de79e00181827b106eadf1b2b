@@ -1,0 +1,23 @@
+
+public class Exam 
+{
+	private static String myobject;
+
+	public Object getMyobject() 
+	{
+		return myobject;
+	}
+
+	public void setMyobject(String myobject) 
+	{
+		this.myobject = myobject;
+	}
+	
+	public static void main(String[] args) 
+	{
+		if(myobject.equals(myobject))
+		System.out.println(true);
+		else
+			System.out.println(false);
+	}
+}
